@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import Catalog from "./pages/Catalog";
 import CarDetails from "./pages/CarDetails";
 import NotFound from "./pages/NotFound";
@@ -20,13 +21,18 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Catalog />} />
-              <Route path="/car/:id" element={<CarDetails />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Catalog />} />
+                  <Route path="/car/:id" element={<CarDetails />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>

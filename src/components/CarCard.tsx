@@ -61,10 +61,10 @@ export function CarCard({ car }: CarCardProps) {
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 gap-2">
+      <CardFooter className="p-4 pt-0 flex flex-col gap-2">
         <Button
           variant="accent"
-          className="flex-1"
+          className="w-full"
           onClick={handleCall}
         >
           <Phone className="mr-2 h-4 w-4" />
@@ -72,7 +72,7 @@ export function CarCard({ car }: CarCardProps) {
         </Button>
         <Button
           variant="outline"
-          className="flex-1"
+          className="w-full"
           asChild
         >
           <Link to={`/car/${car.id}#request`}>
