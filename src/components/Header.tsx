@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
-import telegramIcon from "@/assets/telegram.svg";
 
 export function Header() {
   const { t } = useLanguage();
